@@ -89,8 +89,31 @@ h1.text-dark {
     outline: none;
     box-shadow: none;
 }
+nav{
+    position: fixed;
+    top: 0;
+    /* z-index: 1; */
+}
+.nav-bg-color{
+    
+    background-color:  #7952b3;
+}
+.nav-list-item {
+    margin-left: auto;
+}
+.nav-list-item li{
+    padding:0px 20px ;
 
-
+}
+.nav-list-item li a{
+    color: #e5e5e5;
+}
+.nav-list-item li a:hover{
+    color: #b8afaf;
+}
+.dropdown-menu li a{
+    color:  black;    
+}
 
 
 
