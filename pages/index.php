@@ -12,6 +12,8 @@
     <p>edit by jawwad</p>
     <p>i'm jawwad</p>
 
+    <a href="registration.php">Register</a>
+
     
 </body>
 </html>
