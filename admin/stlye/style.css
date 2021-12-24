@@ -1,0 +1,82 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif; 
+    /* background: linear-gradient(to right ,  #7952b3, #b197d8); */
+}
+
+/* Admin Login form */
+.center-div{
+    /* height: 400px; */
+    width: 350px;
+    /* border: 1px solid black; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-shadow: 0px 0px 5px black;
+    border-radius: 5px;
+}
+.header-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    font-size: x-large;
+    height: 60px;
+    margin: 0px 20px;
+    /* border: 1px solid black; */
+    position: relative;
+    top: -30px;
+    background-color: #7952b3;
+    color: white;
+    border-radius: 10px;
+}
+#submit{
+    height: 40px;
+    width: 120px;
+    background-color: #7952b3;
+    font-size: large;
+    color: white;
+    position: relative;
+    top: 20px;
+    left: calc((350px - 120px) /2);
+    border-radius: 10px;
+    outline: none;
+    border: none;
+}
+.input-field {
+    margin: 0px 10px;
+    /* border: 1px solid black; */
+}
+.input-field input{
+    text-transform:capitalize;
+    width: 100%;
+    padding-left: 10px;
+    border: none;
+    border-bottom: 2px solid black;
+    height: 40px;
+    font-size: large;
+    background: transparent;
+    margin: 10px 0px 0 0; 
+}
+.input-field input:focus{
+    outline: none;
+    background-color: #fff;
+}
+.forgot-password {
+    font-size: medium;
+    margin-top: 30px;
+    margin: 30px 0 0 10px;
+    /* text-transform    */
+}
+.forgot-password a {
+    color: blue;
+    outline: none;
+}
+.forgot-password a{
+    text-decoration: none;
+}
+
+/* Admin Login form end */
