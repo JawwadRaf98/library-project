@@ -1,0 +1,95 @@
+body{
+    background: url('../image/background.jpg');
+    background-size: 100%;
+    background-position: center;
+    min-height: 100vh;
+    /* filter: blur(1px); */
+    /* -webkit-filter: blur(8px); */
+}
+.center-div{
+    background-color: #fff;
+    width: 350px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-shadow: 0px 0px 5px black;
+    border-radius: 5px;
+}
+.header-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: capitalize;
+    font-size: xx-large;
+    height: 70px;
+    margin: 0px 20px;
+    position: relative;
+    top: -35px;
+    background-color: #7952b3;
+    color: white;
+    border-radius: 10px;
+}
+#submit{
+    height: 40px;
+    width: 120px;
+    background-color: #7952b3;
+    font-size: large;
+    color: white;
+    position: relative;
+    top: 20px;
+    left: calc((350px - 120px) /2);
+    border-radius: 10px;
+    outline: none;
+    border: none;
+}
+
+.forgot-password {
+    text-transform: capitalize;
+    font-size: medium;
+    margin-top: 30px;
+    margin: 30px 0 30px 30px;
+}
+.forgot-password a {
+    color: blue;
+    outline: none;
+}
+.forgot-password a{
+    text-decoration: none;
+}
+.box{
+    padding-bottom: 5px;
+    width: 90%;
+    margin: 10px auto;
+    border-bottom: 1px solid black;
+}
+.box input{
+    
+    border: none;
+    outline: none;
+    background: none;
+    font-size: large;
+    width: 80%;
+    padding: 10px 0 5px 10px;
+}
+.box input:focus{
+    background: transparent;
+}
+
+.eye{
+    height: 35px;
+    position: absolute;
+    padding-top: 10px;
+
+}
+#show, #hide{
+    margin-left: 5px;
+}
+ ::placeholder{
+    text-transform: capitalize;
+    font-size: large;
+     color: rgb(142, 142, 143);
+ }
+#hide{
+    display: none;
+}
