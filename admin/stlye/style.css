@@ -46,24 +46,24 @@
     outline: none;
     border: none;
 }
-.input-field {
-    margin: 0px 10px;
-    /* border: 1px solid black; */
+.box{
+    border: 1px solid black;
 }
-.input-field input{
+/* .input-field input{
     text-transform:capitalize;
-    width: 100%;
+    width: 90%;
     padding-left: 10px;
     border: none;
-    border-bottom: 2px solid black;
-    height: 40px;
-    font-size: large;
-    background: transparent;
-    margin: 10px 0px 0 0; 
-}
-.input-field input:focus{
     outline: none;
-    background-color: #fff;
+    background: transparent;
+
+    color: black;
+    
+    background: transparent;
+ 
+} */
+::placeholder{
+    color: rgb(80, 77, 77);
 }
 .forgot-password {
     font-size: medium;
