@@ -12,6 +12,7 @@
     
     <?php include('pages/header.php') ?>
     <h1>i am index</h1>
+    
     <a href="pages/registration.php">Register</a>
 
     <?php include('pages/footer.php') ?>

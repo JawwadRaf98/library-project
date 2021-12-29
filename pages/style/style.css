@@ -90,9 +90,8 @@ h1.text-dark {
     box-shadow: none;
 }
 nav{
-    position: fixed;
+    position: sticky;
     top: 0;
-    /* z-index: 1; */
 }
 .nav-bg-color{
     
@@ -103,16 +102,30 @@ nav{
 }
 .nav-list-item li{
     padding:0px 20px ;
+    text-decoration: none;
 
 }
 .nav-list-item li a{
+    text-decoration: none;
     color: #e5e5e5;
 }
 .nav-list-item li a:hover{
-    color: #b8afaf;
-}
+    color: #b8afaf; 
+} 
+ .nav-list-item li a {color: rgb(41, 196, 248);}
+/* .nav-list-item li a:visited {color: red} */
+/*.nav-list-item li a:hover {color: #FCFC0C} */
+
+/* .nav-list-item li a:visited {
+    color: red;
+} */
 .dropdown-menu li a{
     color:  black;    
+}
+header:after{
+    position: fixed;
+    top: 0;
+
 }
 
 

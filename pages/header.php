@@ -14,8 +14,8 @@
   </head>
   <body>
 
-
-  <nav class="navbar navbar-expand-md fixed-top  nav-bg-color ">
+<header>
+  <nav class="navbar navbar-expand-md  nav-bg-color ">
   <div class="container-fluid">
     <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -27,13 +27,13 @@
       </a>
       <ul class="navbar-nav  mb-2 mb-lg-0 nav-list-item">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Partner</a>
+          <a class="nav-link active" aria-current="page" href="">Partner</a>
         </li>
         <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Categories
             </a>
             <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
@@ -60,4 +60,4 @@
     </div>
   </div>
 </nav>
- 
+ </header>
