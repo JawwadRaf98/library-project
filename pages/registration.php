@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -27,7 +28,10 @@
                 </div>
             
                 <div class="d-flex justify-content-center">
-                    <form action="./backend/add_users.php" method="POST" >
+                    <form action="./backend/userAuth.php" method="POST" >
+                        <!-- <div>
+                            <?php  include('./backend/errorsFile.php') ?>
+                        </div> -->
                         <div class="form-row">
                             <div class="col">
                                 <input type="text" name="fName" id="fName" class="form-control" placeholder="First Name*" required>
@@ -62,7 +66,7 @@
                         </div>
 
                         <div class="submit-btn text-center my-5">
-                            <button type="submit" class="btn btn-warning rounded-pill text-dark px-5">Continue</button>
+                            <button type="submit" name='add_user' class="btn btn-warning rounded-pill text-dark px-5">Continue</button>
                         </div>
 
 

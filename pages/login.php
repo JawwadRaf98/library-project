@@ -18,26 +18,26 @@
 		<h1> E-Library</h1> 
 		<p>A library is a collection of sources of information 
 			and similar resources, made accessible to a defined community for reference or borrowing.
-			Libraries are the places where you can expect smart and clear answers to even most difficult questions.</p>
+			Libraries are the places where you can expect smart and clear answers to even most difficult questions.
+		</p>
 		
 		</div>
 	</div>
 	
 	
-		<div class="right">
+	<div class="right">
 		<h5>Login</h5>
-		<p>Don't have an account? <a href="#">Creat Your Account</a> it takes less than a minute</p>
-		<form>
+		<p>Don't have an account? <a href="registration.php">Creat Your Account</a> it takes less than a minute</p>
+		<form action="./backend/userAuth.php" method="POST">
         <div class="inputs">
-			<input type="text" placeholder="user name">
+			<input type="email" placeholder="Email" name='email' required >
 			<br>
-			<input type="password" placeholder="password">
+			<input type="password" placeholder="Password" name='password' require>
 		</div>
 			
 			<br><br>
 			
 		<div class="remember-me--forget-password">
-				<!-- Angular -->
 	<label>
 		<input type="checkbox" name="item" checked/>
 		<span class="text-checkbox">Remember me</span>
@@ -46,7 +46,7 @@
 		</div>
 			
 			<br>
-			<button>Login</button>
+		<button type="submit"  name="login-user">Login</button>
 	</div>
 </form>
 	
