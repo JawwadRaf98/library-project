@@ -2,8 +2,12 @@
 
     session_start();
 
-    // print_r($_SESSION['username']);
-    // 
+    if(empty($_SESSION['username'])){
+
+        $_SESSION['msg'] = "You Must login to view this page";
+        header('location:../login.php');
+    }
+    
 
     if(isset($_GET['logout'])){
         session_destroy();
@@ -20,17 +24,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
 </head>
 <body>
         <div>
             <h1>This is Home Page</h1>
-            <?php $_SESSION['username']);
-            if(isset($_SESSION['username'])){
-
-                $_SESSION['msg'] = 'You must log in first to view this page';
-                header('location : ../login.php');
-            }
-            ?>
+             
+          
             
             <?php if(isset($_SESSION['success'])) : ?>
                 <div>

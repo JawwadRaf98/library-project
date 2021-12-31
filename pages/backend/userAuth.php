@@ -55,6 +55,7 @@
             }
         };
 
+        print_r($errors);
 
         // // register user if no errors
         if(count($errors)==0){
@@ -65,7 +66,7 @@
             $_SESSION['username'] = $fname . ' ' .$lname;
             $_SESSION['success'] = "You are successfully register";
 
-            header('location: ../index.php');
+            header('location: index.php');
 
             }
         }
@@ -93,11 +94,11 @@
                 $result = mysqli_query($db, $query);
                 $user = mysqli_fetch_assoc($result);
 
-                print_r(($result));
+                // print_r(($result));
                 if(mysqli_num_rows($result)){
                     $_SESSION['username'] = $user['fname']." ".$user['lname'];
                     $_SESSION['success'] = "Loggr in successfully";
-                    header('location:index.php');
+                    header('location: index.php');
                 }else{
                     array_push($errors,"Invalid email or password");
                 }

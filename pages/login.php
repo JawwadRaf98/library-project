@@ -1,3 +1,17 @@
+<?php
+
+	function userAuth(){
+		echo "running";
+	}
+
+
+?>
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en" >
 <head>
@@ -28,20 +42,22 @@
 	<div class="right">
 		<h5>Login</h5>
 		<p>Don't have an account? <a href="registration.php">Creat Your Account</a> it takes less than a minute</p>
-		<form action="./backend/userAuth.php" method="POST">
+		<!-- ./backend/userAuth.php -->
+		<form action=<?php userAuth() ?> method="POST">
         <div class="inputs">
 			<input type="email" placeholder="Email" name='email' required >
 			<br>
+			<!-- <i class="fa fa-key"></i> -->
 			<input type="password" placeholder="Password" name='password' require>
 		</div>
 			
 			<br><br>
 			
 		<div class="remember-me--forget-password">
-	<label>
-		<input type="checkbox" name="item" checked/>
-		<span class="text-checkbox">Remember me</span>
-	</label>
+			<label>
+				<input type="checkbox" name="item" checked/>
+				<span class="text-checkbox">Remember me</span>
+			</label>
 			<p>forget password?</p>
 		</div>
 			
