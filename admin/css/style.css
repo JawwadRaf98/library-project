@@ -1,0 +1,6 @@
+#users tr td {
+    text-transform: capitalize;
+}
+#users tr td:last-child{
+    text-transform: none;
+}
