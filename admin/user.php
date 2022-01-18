@@ -14,6 +14,7 @@
         <!-- container fluid start -->
         <div class="container-fluid">
         <h1>Users</h1>
+        <hr class="blue-divider">
 
 
         <?php 

@@ -4,3 +4,12 @@
 #users tr td:last-child{
     text-transform: none;
 }
+.books-content{
+    border: 1px solid black ;
+}
+.blue-divider{
+    border-bottom: 2px solid rgb(149, 149, 241);
+}
+.add-button button{
+   margin-left: 10px;
+}
