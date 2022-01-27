@@ -1,6 +1,17 @@
 <?php 
     include('includes/header.php');
     include('includes/sidebar.php');
+    $host = 'localhost';
+    $user = 'root';
+    $password = '';
+    $database = 'library';
+
+    $connection = mysqli_connect($host,$user,$password,$database);
+
+    $query = "SELECT * FROM books";
+    $run_query = mysqli_query($connection, $query);
+    $data = mysqli_fetch_all($run_query);
+    
 ?>
 <link rel="stylesheet" href="css/style.css" type="text/css">
  <!-- Content Wrapper -->
@@ -23,34 +34,43 @@
                 <hr>
                 <div class="available-books">
                 <div class="container">
-                    <div class="row">
-   
-                        <div class="col-lg-4 col-md-6 col-sm-12 mb-4   ">
 
-                            <div class="card" style="width: 18rem;">
-                                <img class="card-img-top" src="..." alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title">Name</h5>
-                                    <p class="card-text">Description:</p>
+                    <?php if($data) : ?>
+                        <div class="row">
+    
+                            <div class="col-lg-4 col-md-6 col-sm-12 mb-4   ">
+
+                                <div class="card" style="width: 18rem;">
+                                    <img class="card-img-top" src="..." alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Name</h5>
+                                        <p class="card-text">Description:</p>
+                                    </div>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">Authot:</li>
+                                        <li class="list-group-item">DOP:</li>
+                                        <li class="list-group-item">Category</li>
+                                    </ul>
+                                    <div class="card-body">
+                                        <button  type="button" class="btn btn-primary">Edit</button>
+                                        <button type="button" class="btn btn-danger">Delete</button>
+                                    </div>
                                 </div>
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">Authot:</li>
-                                    <li class="list-group-item">DOP:</li>
-                                    <li class="list-group-item">Category</li>
-                                </ul>
-                                <div class="card-body">
-                                    <button  type="button" class="btn btn-primary"><a href="#" id="edit" class="card-link">Edit</a></button>
-                                    <button type="button" class="btn btn-danger"><a href="#" id='delete' class="card-link">Delete</a></button>
-                                </div>
+
                             </div>
 
-                        </div>
+                            
 
-                        
-
+                            </div>
                         </div>
-                    </div>
+                    <?php else : ?>
+
+                        <div class="not-found">
+                            <h1>data not found</h1>
+                        </div>
+                    <?php endif ?>
                 </div>
+
             </div>
 
 

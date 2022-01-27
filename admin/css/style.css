@@ -6,10 +6,19 @@
 }
 .books-content{
     border: 1px solid black ;
+    margin-bottom: 50px;
 }
 .blue-divider{
     border-bottom: 2px solid rgb(149, 149, 241);
 }
 .add-button button{
    margin-left: 10px;
+}
+#edit #delete{
+   border: 1px solid black;
+}
+.not-found{
+    text-transform: capitalize;
+    text-align: center;
+    margin-bottom: 20px;
 }

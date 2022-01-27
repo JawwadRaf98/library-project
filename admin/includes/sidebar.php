@@ -1,10 +1,6 @@
 <?php 
-    $host = 'localhost';
-    $user = 'root';
-    $password = '';
-    $database = 'library';
+    include('includes/config.php');
 
-    $connection = mysqli_connect($host,$user,$password,$database);
 ?>
 
 
