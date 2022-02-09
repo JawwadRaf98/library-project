@@ -1,3 +1,38 @@
+<?php
+    $showAlert = false;
+// echo "jawwad";
+    if($_SERVER['REQUEST_METHOD'] == 'POST'){
+        include 'includes/config.php';
+        $login = false;
+        $showAlert = false;
+        
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+
+        $query = "select * from admin where adminEmail = '$email' AND adminPassword = '$password'";
+        $result = mysqli_query($connection, $query);
+        $num =  mysqli_num_rows($result);
+
+        if($num==1){
+            $login =  true;
+            session_start();
+            $_SESSION['loggedIn'] = true;
+            $_SESSION['adminEmail'] = $email;
+            header("location: index.php");
+            $showAlert = false;
+
+        }
+        else{
+            $showAlert = true;
+            $errMessage = "Invalid email or password";
+
+        }
+       
+    }
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -41,30 +76,32 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                                     </div>
-                                    <form class="user">
+                                    <?php
+
+                                    if($showAlert){
+                                        echo'<div class="alert alert-danger" role="alert">'.$errMessage .'</div>';
+                                    }
+                                    ?>
+                                    <form class="user" action='login.php' method="POST">
                                         <div class="form-group">
-                                            <input type="email" class="form-control form-control-user"
+                                            <input type="email" name="email" class="form-control form-control-user"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
                                                 placeholder="Enter Email Address...">
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control form-control-user"
+                                            <input type="password" name="password" class="form-control form-control-user"
                                                 id="exampleInputPassword" placeholder="Password">
                                         </div>
-                                        <div class="form-group">
-                                            <div class="custom-control custom-checkbox small">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck">
-                                                <label class="custom-control-label" for="customCheck">Remember
-                                                    Me</label>
-                                            </div>
-                                        </div>
-                                        <a href="index.php" class="btn btn-primary btn-user btn-block">
-                                            Login
-                                        </a>
                                         <hr>
+                                        <div class="form-group">
+                                            <input type="Submit" value="Submit" class="btn btn-primary btn-user btn-block"
+                                                id="exampleInputPassword" placeholder="Password">
+                                        </div>
+                                       
+                                        
 
                                     </form>
-                                    <hr>
+                                  
                                     <div class="text-center">
                                         <a class="small" href="forgot-password.html">Forgot Password?</a>
                                     </div>

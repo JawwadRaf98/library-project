@@ -1,14 +1,12 @@
 <?php
     include('includes/header.php');
     include('includes/sidebar.php');
+    include('includes/config.php');
 
-    $host = 'localhost';
-    $user = 'root';
-    $password = '';
-    $database = 'library';
-
-    $connection = mysqli_connect($host,$user,$password,$database);
-
+    if(isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != true){
+        header("location:login.php");
+        exit();
+    }
 ?>
 
        
