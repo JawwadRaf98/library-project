@@ -1,6 +1,14 @@
 <?php 
+    session_start();
     include('includes/header.php');
     include('includes/sidebar.php');
+    include('includes/auth.php');
+
+    
+     
+
+
+
     $host = 'localhost';
     $user = 'root';
     $password = '';

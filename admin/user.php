@@ -1,10 +1,11 @@
 <?php 
+    session_start();
     include('includes/header.php');
     include('includes/sidebar.php');
     include('includes/config.php');
-
+    include('includes/auth.php')
 ?>
-<link rel="stylesheet" href="css/style.css" type="text/css">
+<!-- <link rel="stylesheet" href="css/style.css" type="text/css"> -->
  <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
 
@@ -25,7 +26,6 @@
 
         <?php 
             
-
             $query = "SELECT * FROM users";
             $run_query = mysqli_query($connection, $query);
             $data = mysqli_fetch_all($run_query);

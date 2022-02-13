@@ -11,6 +11,8 @@
 
         $query = "select * from admin where adminEmail = '$email' AND adminPassword = '$password'";
         $result = mysqli_query($connection, $query);
+        $userData =  mysqli_fetch_array($result);
+        // print_r($userData['adminName']. " ". $userData['adminLastName']);
         $num =  mysqli_num_rows($result);
 
         if($num==1){
@@ -18,6 +20,7 @@
             session_start();
             $_SESSION['loggedIn'] = true;
             $_SESSION['adminEmail'] = $email;
+            $_SESSION['userData'] = $userData;
             header("location: index.php");
             $showAlert = false;
 
