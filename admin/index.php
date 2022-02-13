@@ -1,12 +1,11 @@
 <?php
+    session_start();
     include('includes/header.php');
     include('includes/sidebar.php');
     include('includes/config.php');
-
-    if(isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != true){
-        header("location:login.php");
-        exit();
-    }
+    include('includes/auth.php');
+    
+   
 ?>
 
        
