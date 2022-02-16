@@ -1,11 +1,11 @@
  <!-- Footer -->
- <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2021</span>
-                    </div>
-                </div>
-            </footer>
+ <footer class=" text-center footer text-lg-start">
+  <!-- Copyright -->
+  <div class="text-center p-3">
+    E-Library © 2022 Design & Created By: <b>BC180408671 & BC180203457<b>
+  </div>
+  <!-- Copyright -->
+</footer>
             <!-- End of Footer -->
 
         </div>

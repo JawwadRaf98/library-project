@@ -17,14 +17,13 @@
         $current_password = $_POST['current-pass'];
         $new_password = $_POST['new-pass'];
         $confirm_password = $_POST['confirm-pass'];
-        echo $current_password ." ".$data['adminPassword'];  
-
+      
         if($current_password != $data['adminPassword']){
-            echo $current_password ." ".$data['adminPassword'];  
+            
             $currPassErr = "Invalid password";
         }
         else{
-            echo "comming";
+
             $currPassErr = "";
             if($new_password != $confirm_password){
                 $newPassError = "Password doesn't matched";
@@ -44,7 +43,6 @@
 
     }
 
-    
     function getName($data){
        return $data['adminName']." ".$data['adminLastName'];
     }
@@ -57,7 +55,6 @@
 
 
 ?>
-<link rel="stylesheet" href="css/style.css" type="text/css">
  <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
 
@@ -70,7 +67,7 @@
 
 
         <?php if($_GET['tab'] == 'setting'): ?>
-            <div class="container">
+            <div class="container setting">
                 <div class="row">
                     <div class="col-xl-8 col-md-12 col-sm-12 col-xs-12">
                         <?php 
@@ -79,13 +76,15 @@
                                 echo $updateMessage;
                                 echo "</div>";
                             }
+
                         ?>
 
                     <form action="" method="POST">
                         <div class="mb-3">
                             <label for="CurrentPassword" class="form-label">Current Password</label>
                             <input type="password" name="current-pass" class="form-control" id="CurrentPassword" required>
-                            <small<?php echo $currPassErr ?></small>
+   
+                            <small><?php echo $currPassErr; ?></small>
                         </div>
                         <div class="mb-3">
                             <label for="newPassword" class="form-label">New Password</label>

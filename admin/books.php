@@ -3,25 +3,16 @@
     include('includes/header.php');
     include('includes/sidebar.php');
     include('includes/auth.php');
-
+    include('includes/config.php');
     
-     
 
-
-
-    $host = 'localhost';
-    $user = 'root';
-    $password = '';
-    $database = 'library';
-
-    $connection = mysqli_connect($host,$user,$password,$database);
 
     $query = "SELECT * FROM books";
     $run_query = mysqli_query($connection, $query);
     $data = mysqli_fetch_all($run_query);
     
 ?>
-<link rel="stylesheet" href="css/style.css" type="text/css">
+
  <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
 
