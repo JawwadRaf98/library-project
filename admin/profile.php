@@ -19,7 +19,6 @@
         $confirm_password = $_POST['confirm-pass'];
       
         if($current_password != $data['adminPassword']){
-            
             $currPassErr = "Invalid password";
         }
         else{
@@ -29,9 +28,13 @@
                 $newPassError = "Password doesn't matched";
             }
             else{
+                $adminEmail  = $data['adminEmail'];
+                print_r($connection) ;
                 $newPassError = "";
-                $query = "UPDATE admin SET 'adminPassword' = $new_password  WHERE 'adminEmail' = $new_password";
-                $result = mysqli_query($connection, $query);
+
+                $query = "UPDATE admin SET adminPassword = '{$new_password}' WHERE adminEmail = '{$adminEmail}'";
+                $result = mysqli_query($connection, $query) or die("Query unseccessful");
+                print_r($result);
                 if($result){
                     $updateStatus = true;
                     $updateMessage = "Recode update successfully";

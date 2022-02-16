@@ -8,8 +8,8 @@
 
 
     $query = "SELECT * FROM books";
-    $run_query = mysqli_query($connection, $query);
-    $data = mysqli_fetch_all($run_query);
+    $result = mysqli_query($connection, $query) or die("Query failed");
+    $data = mysqli_fetch_all($result);
     
 ?>
 

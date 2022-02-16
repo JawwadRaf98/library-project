@@ -4,6 +4,6 @@
     $password = '';
     $database = 'library';
 
-    $connection = mysqli_connect($host,$user,$password,$database);
+    $connection = mysqli_connect($host,$user,$password,$database) or die("Connection Failed");
 
 ?>
