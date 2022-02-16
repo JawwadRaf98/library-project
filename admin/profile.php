@@ -69,7 +69,7 @@
         <?php if($_GET['tab'] == 'setting'): ?>
             <div class="container setting">
                 <div class="row">
-                    <div class="col-xl-8 col-md-12 col-sm-12 col-xs-12">
+                    <div class="column col-xl-6 col-md-12 col-sm-12 col-xs-12">
                         <?php 
                             if($updateStatus){
                                 echo '<div class="alert alert-primary" role="alert">';
@@ -79,26 +79,27 @@
 
                         ?>
 
-                    <form action="" method="POST">
+                    <form class="setting-form" action="profile.php?tab=setting" method="POST">
                         <div class="mb-3">
                             <label for="CurrentPassword" class="form-label">Current Password</label>
                             <input type="password" name="current-pass" class="form-control" id="CurrentPassword" required>
    
-                            <small><?php echo $currPassErr; ?></small>
+                            <small class="err-msg"><?php echo $currPassErr; ?></small>
                         </div>
                         <div class="mb-3">
                             <label for="newPassword" class="form-label">New Password</label>
                             <input type="password" name="new-pass"class="form-control" id="newPassword" required>
 
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-3 ">
                             <label for="confrimPassword" class="form-label">Comfirm Password</label>
                             <input type="password" name="confirm-pass" class="form-control" id="confrimPassword" required>
                         </div>
-                        <small><?php echo $newPassError ?></small>
+                        <small class="err-msg"><?php echo $newPassError ?></small>
                         <hr>
-  
+                        <div id="submit">
                         <button type="submit" class="btn btn-primary">Update</button>
+                        </div>
                     </form>
                     </div>
                 </div>
