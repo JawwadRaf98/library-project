@@ -4,7 +4,12 @@
     include('includes/sidebar.php');
     include('includes/config.php');
     include('includes/auth.php');
-    $data = $_SESSION['userData'];
+    $adminEmail = $_SESSION['adminEmail'];
+    $query = "select * from admin where adminEmail = '{$adminEmail}'";
+    $result = mysqli_query($connection, $query) or die("query failed");
+    $data = mysqli_fetch_assoc($result);
+
+
 
     $currPassErr = "";
     $newPassError = "";
@@ -29,12 +34,10 @@
             }
             else{
                 $adminEmail  = $data['adminEmail'];
-                print_r($connection) ;
                 $newPassError = "";
 
                 $query = "UPDATE admin SET adminPassword = '{$new_password}' WHERE adminEmail = '{$adminEmail}'";
                 $result = mysqli_query($connection, $query) or die("Query unseccessful");
-                print_r($result);
                 if($result){
                     $updateStatus = true;
                     $updateMessage = "Recode update successfully";

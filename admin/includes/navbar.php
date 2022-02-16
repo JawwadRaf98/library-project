@@ -1,4 +1,5 @@
-<?php 
+<?php
+    include('config.php');
     function getUserName(){
         echo "<h6>". $_SESSION['userData']['adminName']." ".$_SESSION['userData']['adminLastName']."</h6>"; 
     }
@@ -144,7 +145,22 @@
                 <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                 Settings
             </a>
-            
+            <?php
+                $adminEmail = $_SESSION['adminEmail'];
+                $query = "select * from admin where adminEmail = '{$adminEmail}'";
+                $result =  mysqli_query($connection,$query) or die("query failed");
+                $data = mysqli_fetch_assoc($result);
+
+                if($data['id'] == 1  || $data['id'] == 4){
+            ?>  
+                <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="add-admin.php" >
+                        <i class="fas fa-solid fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                        Add Admin
+                    </a>
+            <?php 
+                }
+            ?>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
