@@ -31,13 +31,12 @@
 
 }
 .footer{
-    position: absolute;
+    /* position: absolute;
     bottom: 0px;
     left: 0px;
     width: 100%;
-    text-align: right;
-    /* border: 1px solid black; */
-    background-color: rgb(226, 214, 214);
+    text-align: right;*/
+    background-color: rgb(226, 214, 214); 
 }
 .err-msg{
     color: red;
@@ -60,4 +59,22 @@
     padding: 20px 0px;
     /* border: 1px solid black; */
     margin: 0 auto;
+}
+
+.add-admin-col{
+    /* border: 1px solid black; */
+    margin: 20px auto;
+}
+
+.add-admin-col form label{
+    font-size: large;
+    color: rgba(0, 0, 0, 0.795);
+}
+.submit-btn{
+    /* border: 1px solid black */
+    text-align: center; 
+    padding: 10px 0px;
+}
+.submit-btn button{
+    padding: 5px 25px;
 }

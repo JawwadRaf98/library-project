@@ -10,7 +10,7 @@
         $password = $_POST['password'];
 
         $query = "select * from admin where adminEmail = '$email' AND adminPassword = '$password'";
-        $result = mysqli_query($connection, $query);
+        $result = mysqli_query($connection, $query) or die("Query failed");
         $userData =  mysqli_fetch_array($result);
         // print_r($userData['adminName']. " ". $userData['adminLastName']);
         $num =  mysqli_num_rows($result);

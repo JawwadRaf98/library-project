@@ -1,9 +1,10 @@
 <?php
     session_start();
+    include('includes/auth.php');
     include('includes/header.php');
     include('includes/sidebar.php');
     include('includes/config.php');
-    include('includes/auth.php');
+    
     
    
 ?>
