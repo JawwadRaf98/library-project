@@ -30,11 +30,11 @@
 
 <!-- Nav Item - Pages Collapse Menu -->
 <li class="nav-item">
-    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-        aria-expanded="true" aria-controls="collapsePages">
+    <a class="nav-link" href="category.php" >
         <i class="fas fa-fw fa-list-alt"></i>
         <span>Category</span>
     </a>
+</li>
     <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
             <?php
@@ -45,7 +45,7 @@
                     echo "<a class='collapse-item' href='register.html'>$value[1]</a> <br>";
                 }
             ?>
-        </div>
+        </div> -->
     </div>
 </li>
 <!-- Divider -->

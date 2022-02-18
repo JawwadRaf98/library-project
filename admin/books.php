@@ -28,7 +28,7 @@
             <hr class="blue-divider" />
 
                 <div class="add-button">
-                    <button type="button" class="btn btn-primary">Add Books</button>
+                    <a href="" class="btn btn-primary">Add Books</a>
                 </div>
                 <hr>
                 <div class="available-books">

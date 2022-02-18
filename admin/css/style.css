@@ -31,6 +31,7 @@
 
 }
 .footer{
+    margin-top:50px;
     /* position: absolute;
     bottom: 0px;
     left: 0px;
@@ -77,4 +78,51 @@
 }
 .submit-btn button{
     padding: 5px 25px;
+}
+.cat-box{
+    position: relative;
+    width: 100%;
+    margin: 5px 0px;
+    border: 1px solid #4e72dfcc;
+    height: 130px;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #4e72dfcc;
+    
+
+}
+.cat-content-box{
+    margin-top: 20px;
+}
+.cat-text
+{   
+    color: rgba(0, 0, 0, 0.562);
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+.action{
+    margin: 5px 0px;
+}
+.action button a{
+    color: white;
+    text-decoration: none;
+   width: 100px;
+   padding:  0px 10px;
+}
+.edit, .delete{
+    border: none;
+    width: 100px;
+    border-radius: 5px;
+}
+.edit,.delete{
+    background-color: rgba(190, 243, 250, 0.644);
+    margin-top : 5px;
+}
+.action button:hover{
+    background-color: rgb(129, 170, 175);
+}
+.action button:hover a{
+    color: black;
+
 }
