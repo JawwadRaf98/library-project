@@ -44,11 +44,12 @@
         <div class="container-fluid">
 
         <div class="container">
-            <div class="row">
+            <div class="row justify-content-center">
                 <div class="col-lg-8 col-md-8 col-sm-12">
                     <div class="category">
-                        
-                            
+                    
+                        <a href="category.php" class="back">back</a>
+                       
                         <div class="form-body">
                         <?php if($cat_success_status) {
                          echo '<div class="alert alert-success" role="alert">';

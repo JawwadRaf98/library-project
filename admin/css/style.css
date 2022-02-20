@@ -134,3 +134,7 @@
 #cat-error{
     color: red;
 }
+.back{
+    text-transform: capitalize;
+    text-decoration: none;
+}

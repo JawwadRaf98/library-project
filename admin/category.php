@@ -46,7 +46,7 @@
                                 </p>
                                 <div class="action">
                                     <button class="delete" ><a  href="delete.php?del-id=<?php echo $value[0] ?>">Delete</a> </button> 
-                                    <button class="edit"><a href="?edit=<?php echo $value[0] ?> ">Edit</a></button>
+                                    <button class="edit"><a href="edit.php?id=<?php echo $value[0] ?>">Edit</a></button>
                                 </div>
                             </div>
                         </div>
