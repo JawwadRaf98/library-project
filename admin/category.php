@@ -8,6 +8,8 @@
     $query = "select * from category";
     $result = mysqli_query($connection, $query) or die("Query Failed");
     $category = mysqli_fetch_all($result);
+
+    
 ?>
 
  <!-- Content Wrapper -->
