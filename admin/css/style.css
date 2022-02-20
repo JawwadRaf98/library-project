@@ -96,6 +96,7 @@
 }
 .cat-text
 {   
+    text-transform: capitalize;
     color: rgba(0, 0, 0, 0.562);
     margin: 0;
     font-size: 24px;
@@ -125,4 +126,11 @@
 .action button:hover a{
     color: black;
 
+}
+.form-body form{
+    padding:10px;
+    margin: 50px;
+}
+#cat-error{
+    color: red;
 }

@@ -25,12 +25,12 @@
                 <!-- <hr class="blue-divider" /> -->
 
                 <div class="add-button">
-                    <a href="?tab=add-category" class="btn btn-primary">Add Category</a>
+                    <a href="add-category.php" class="btn btn-primary">Add Category</a>
                 </div>
                 <hr>
-            </div>
+          </div>
 
-        <div class="row">
+            <div class="row">
 
             <?php
                 if(count($category) > 0){
@@ -43,18 +43,18 @@
                                 <?php echo $value[1] ?>    
                                 </p>
                                 <div class="action">
-                                    <button class="delete" ><a  href="?delete=<?php echo $value[0] ?>">Delete</a> </button> 
+                                    <button class="delete" ><a  href="delete.php?del-id=<?php echo $value[0] ?>">Delete</a> </button> 
                                     <button class="edit"><a href="?edit=<?php echo $value[0] ?> ">Edit</a></button>
                                 </div>
                             </div>
                         </div>
                     </div>
-           <?php } }?>
-
-
-            
-            
+           <?php } }?> 
         </div>
+       
+
+                    
+
 
 
         <!-- page content here -->

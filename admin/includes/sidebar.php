@@ -35,18 +35,6 @@
         <span>Category</span>
     </a>
 </li>
-    <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-        <div class="bg-white py-2 collapse-inner rounded">
-            <?php
-                 $query = "SELECT * FROM category";
-                 $run_query = mysqli_query($connection, $query);
-                 $data = mysqli_fetch_all($run_query);
-                foreach($data as $value){
-                    echo "<a class='collapse-item' href='register.html'>$value[1]</a> <br>";
-                }
-            ?>
-        </div> -->
-    </div>
 </li>
 <!-- Divider -->
 <hr class="sidebar-divider">
