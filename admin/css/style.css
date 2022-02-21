@@ -138,3 +138,9 @@
     text-transform: capitalize;
     text-decoration: none;
 }
+#book-image, #book-file{
+    margin-left: 20px;
+}
+.add-book-form{
+    margin: 50px 0px;
+}
