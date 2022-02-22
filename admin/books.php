@@ -9,7 +9,7 @@
 
     $query = "SELECT * FROM books";
     $result = mysqli_query($connection, $query) or die("Query failed");
-    $data = mysqli_fetch_all($result);
+    $books = mysqli_fetch_all($result);
     
 ?>
 
@@ -36,11 +36,38 @@
 
                     <?php if($data) : ?>
                         <div class="row">
-    
-                            <div class="col-lg-4 col-md-6 col-sm-12 mb-4   ">
 
-                                <div class="card" style="width: 18rem;">
-                                    <img class="card-img-top" src="..." alt="Card image cap">
+                        
+                            
+                            <?php 
+                            // print_r($books);
+                                foreach($books as $singleBook){
+                                    // print_r($singleBook);
+
+                            ?>
+                                   <div class="col-lg-4 col-md-4 col-sm-6 sol-xs-12">
+
+                                   <div class="card mb-4" style="width: 18rem;">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Name: <?php echo ucfirst($singleBook['1'])?></h5>
+                                        <p class="card-text">Description: <?php echo ucfirst($singleBook['5'])?></p>
+                                    </div>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">Authot: <?php echo ucfirst($singleBook['2'])?></li>
+                                        <li class="list-group-item">DOP: <?php echo ucfirst($singleBook['4'])?></li>
+                                        <li class="list-group-item">Category: <?php echo ucfirst($singleBook['3'])?></li>
+                                    </ul>
+                                    <div class="card-body">
+                                        <a href="editBook.php?id=<?php echo $singleBook[0]?>" type="button" class="btn btn-primary">Edit</a>
+                                        <a href="deleteBook.php?id=<?php echo $singleBook[0]?>" type="button" class="btn btn-danger">Delete</a>
+                                    </div>
+                                </div>
+                                   </div>
+                                                             
+                            <?php } ?>
+                            
+                                <!-- <div class="card" style="width: 18rem;">
+                                    <img class="card-img-top" src=alt="Card image cap">
                                     <div class="card-body">
                                         <h5 class="card-title">Name</h5>
                                         <p class="card-text">Description:</p>
@@ -54,7 +81,7 @@
                                         <button  type="button" class="btn btn-primary">Edit</button>
                                         <button type="button" class="btn btn-danger">Delete</button>
                                     </div>
-                                </div>
+                                </div> -->
 
                             </div>
 
