@@ -1,0 +1,113 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+.navbar{
+    background-image: linear-gradient(to left, #7952b3, #520eb9 ) ;
+    color: #fff;
+    /* height: 100px !important; */
+}
+/* .navbar-collapse{ */
+    /* border: 1px solid black;
+    width: fit-content !important;
+    justify-content: left; */
+    /* float: left; */
+/* } */
+.navbar-brand{
+    font-size: 26px;
+    padding: 0px 0px 10px 0px;
+}
+.navbar-nav li a{
+    letter-spacing: 1px;
+    font-weight: 500;
+    text-transform: capitalize;
+    display: flex;
+    padding: 0 10px !important;
+   
+    color: rgb(207, 205, 205) !important;
+}
+.navbar-nav li a.active {
+    color: rgb(252, 252, 252) !important;
+}
+.navbar-toggler span, #navbarText{
+    color: #fff;
+}
+.navbar-nav li a:hover{
+    color: aqua !important;
+}
+nav button{
+    margin-right: 20px;
+}
+.nav-item{
+    /* height: 30px; */
+    padding: 0px 0px 10px 0px;
+    /* border: 1px solid black; */
+}
+.innerUl{
+    margin-top: 5px;
+    margin-bottom: 10px;
+    padding-top: 10px;
+
+    background-color: #520eb9 ;
+    position: absolute;
+    list-style: none;
+    /* top: 10px; */
+    display: none;
+    /* border: 1px solid black; */
+}
+.innerUl li a{
+    /* padding: 0px 20px; */
+    margin-right: 20px;
+    
+    /* border: 1px solid black; */
+    /* color: #520eb9; */
+    font-size: 16px !important;
+    /* list-style: none; */
+    text-decoration: none;
+    list-style: none;
+}
+.nav-item:hover .innerUl{
+    display: block;
+}
+._banner{
+    /* border: 1px solid black; */
+    width: 100vw;
+    background-color: rgba(41, 41, 41, 0.644) !important;
+    filter: blur(0.3);
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+._banner_inner{
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    width: 70%;
+    margin: 0 auto;
+    /* border: 1px solid blasck; */
+    text-align: center;
+}
+._content{
+    color: white;
+}
+._content h2{
+   font-size: 1.5rem;
+   letter-spacing: 1px;
+}
+._content  h3{
+    font-size: 3rem;
+    text-transform: uppercase;
+}
+._content  h1{
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-size: 4rem;
+}
+
+@media only screen and (max-width: 991px) {
+    nav button{
+        margin-left: 20px;
+    }
+  }
