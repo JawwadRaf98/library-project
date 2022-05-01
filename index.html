@@ -43,6 +43,9 @@
                         <li><a href="">Urdu</a></li>
                     </ul>
                   </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="">contact</a>
+                  </li>
                 </ul>
                 
               </div>
@@ -69,16 +72,117 @@
           <section class="new__books books">  
             <h1 class="heading"> Feature Books</h1>
             <div class="books__section">
-              
+              <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
+                  <div class="book">
+                    <img src = "images/book.png" />
+                    <div class="content">
+                        <h4>Jawwad</h4>
+                        <p class="detail">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni aliquid laborum cumque </p> 
+                        <p class="date">20-apr-2022</p>
+                        <button class="view__book" onclick="view_book_detail()">View</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+                  <div class="book">
+                    <img src = "images/book.png" />
+                    <div class="content">
+                        <h4>Jawwad</h4>
+                        <p class="detail">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni aliquid laborum cumque </p> 
+                        <p class="date">20-apr-2022</p>
+                        <button class="view__book" onclick="view_book_detail()">View</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+                  <div class="book">
+                    <img src = "images/book.png" />
+                    <div class="content">
+                        <h4>Jawwad</h4> 
+                        <p class="detail">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni aliquid laborum cumque </p>
+                        <p class="date">20-apr-2022</p>
+                        <button class="view__book" onclick="view_book_detail()">View</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+                  <div class="book">
+                    <img src = "images/book.png" />
+                    <div class="content">
+                        <h4>Jawwad</h4>
+                        <p class="detail">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni aliquid laborum cumque </p> 
+                        <p class="date">20-apr-2022</p>
+                        <button class="view__book" onclick="view_book_detail()">View</button>
+                    </div>
+                  </div>
+                </div>
+  
+              </div>
+            </div>
+          </section>
 
+
+          <!-- categories -->
+          <section class="categories books">  
+            <h1 class="heading">Categories</h1>
+            <div class="books__section">
+              <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
+                  <div class="book">
+                    <img src = "images/category/computer.png" />
+                    <div class="content">
+                        <h4>Computer</h4>
+                        <p class="detail">Books: <span class="no_of_books">10</span></p> 
+                        <button class="view__book" onclick="categories()">Explore</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+                  <div class="book">
+                    <img src = "images/category/maths.jpg" />
+                    <div class="content">
+                        <h4>Maths</h4>
+                        <p class="detail">Books: <span class="no_of_books">10</span></p> 
+                        <button class="view__book" onclick="categories()">Explore</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+                  <div class="book">
+                    <img src = "images/category/ds.png" />
+                    <div class="content">
+                        <h4>Data Science</h4> 
+                        <p class="detail">Books: <span class="no_of_books">10</span></p>
+                        <button class="view__book" onclick="categories()">Explore</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+                  <div class="book">
+                    <img src = "images/category/eng.png" />
+                    <div class="content">
+                        <h4>English</h4>
+                        <p class="detail">Books: <span class="no_of_books">10</span></p> 
+                        <button class="view__book" onclick="categories()">Explore</button>
+                    </div>
+                  </div>
+                </div>
+  
+              </div>
             </div>
           </section>
       </div>
 
     </main>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+<script>
+  view_book_detail = () =>{
+    alert("runniing");
+  }
+</script>
 </body>
 
 

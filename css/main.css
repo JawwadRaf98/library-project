@@ -1,11 +1,13 @@
-*{
+* h1 h2 h3 h4 h5 h6{
     padding: 0;
     margin: 0;
     font-family: sans-serif;
 }
 .navbar{
+    width:100%;
     background-image: linear-gradient(to left, #7952b3, #520eb9 ) ;
     color: #fff;
+    z-index: 2;
     /* height: 100px !important; */
 }
 /* .navbar-collapse{ */
@@ -73,6 +75,7 @@ nav button{
 ._banner{
     /* border: 1px solid black; */
     width: 100vw;
+    background-image: url('./images/banner/1.jpg');
     background-color: rgba(41, 41, 41, 0.644) !important;
     filter: blur(0.3);
     height: 400px;
@@ -104,6 +107,60 @@ nav button{
     letter-spacing: 0.5px;
     text-transform: uppercase;
     font-size: 4rem;
+}
+.books{
+    /* border: 1px solid; */
+    margin: 50px 0px  ;
+}
+.books h1 {
+    color: #7952b3;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-left: 10px;
+
+    font-size: 2.5rem;
+}
+.books__section .book{
+    margin: 20px 0px;
+    padding-bottom: 10px;
+    /* border: 1px solid black; */
+    box-shadow: 0px 0px 5px gray;
+}
+.books__section .book>img{
+    padding: 10px 0px;
+    display: flex;
+    text-align: center;
+    /* border: 1px solid black; */
+    margin: 0 auto;
+    width: 80%;
+    height: 12rem;
+}
+.book .content{
+
+    padding-left: 10px;
+    margin-top: 10px;
+}
+.book .content> h4{
+
+    padding-left: 10px;
+    border-left: 4px solid orangered;
+}
+.book .content> p{
+    color: rgb(116, 116, 116);
+}
+.book .content .view__book{
+    border: none;
+    background-color: orangered;
+    /* border: 1px solid; */
+    padding: 3px 30px;
+    box-shadow: 0px 0px 5px orangered;
+    border-radius: 10px;
+    /* float: right; */
+    color: white;
+}
+p.detail{
+    text-align: left;
+    padding-right: 10px;
+
 }
 
 @media only screen and (max-width: 991px) {
