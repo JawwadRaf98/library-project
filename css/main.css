@@ -3,6 +3,7 @@
     margin: 0;
     font-family: sans-serif;
 }
+
 .navbar{
     width:100%;
     background-image: linear-gradient(to left, #7952b3, #520eb9 ) ;
@@ -74,14 +75,23 @@ nav button{
 }
 ._banner{
     /* border: 1px solid black; */
+      background-image: url('1.jpg') !important;
+    background-size: cover;
+    background-attachment: fixed;
+    /* filter: blur(4px); */
+
+
     width: 100vw;
-    background-image: url('./images/banner/1.jpg');
-    background-color: rgba(41, 41, 41, 0.644) !important;
-    filter: blur(0.3);
+    /* background-image: linear-gradient(to right,  rgba(41, 41, 41, 0.644) , rgba(173, 166, 166, 0.644)); */
+    /* background-color: rgba(41, 41, 41, 0.644) !important; */
+    /* filter: blur(0.3); */
     height: 400px;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+._banner img{ 
+    border: 2px solid black;
 }
 ._banner_inner{
     /* display: flex;
@@ -93,6 +103,7 @@ nav button{
     text-align: center;
 }
 ._content{
+    filter: blur(0px) !important;
     color: white;
 }
 ._content h2{
@@ -161,6 +172,90 @@ p.detail{
     text-align: left;
     padding-right: 10px;
 
+}
+
+._modal{
+    /* display: none;    */
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    overflow: auto;
+    animation-name: modalOpen;
+    animation-duration: 0.5s;
+    background-color: rgba(0,0,0,0.5);
+}
+._modal_content{
+    background-color: #f4f4f4;
+    margin: 10% auto;
+    width: 70%;
+    /* padding: 20px; */
+    box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2),  0 7px 20px 0 rgba(0,0,0,0.17);
+}
+._modal_header{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 20px;
+    align-items: center;
+    background-color: coral;
+    color: white;
+    /* border: 1px solid black; */
+}
+
+._modal_body{
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+
+}
+._modal_body .image{
+    /* border: 1px solid; */
+    width: 30%;
+    
+}
+._modal_body ._table {
+    font-size: 1rem;
+    width: 65%;
+    /* border: 1px solid; */
+}
+._modal_body ._table tr td{
+    padding-left: 10px;
+    /* width:10%; */
+
+}
+
+._modal_body .image img{
+    width: 100%;
+}
+._modal_footer{
+    padding: 10px 20px;
+    background-color: coral;
+}
+._modal_footer p{
+    text-align: right;
+}
+._closeBtn{
+    /* display: block; */
+    /* float: right; */
+    color: #ccc;
+    font-size: 30px;
+}
+._closeBtn:hover ,._closeBtn:focus{
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+
+}
+@keyframes modalOpen {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
 }
 
 @media only screen and (max-width: 991px) {
