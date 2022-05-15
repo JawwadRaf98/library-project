@@ -42,6 +42,13 @@
 nav button{
     margin-right: 20px;
 }
+nav button a{
+    text-decoration: none;
+    color: white;
+}
+nav button a:hover{
+    color: white;
+}
 .nav-item{
     /* height: 30px; */
     padding: 0px 0px 10px 0px;
@@ -72,39 +79,32 @@ nav button{
 }
 .nav-item:hover .innerUl{
     display: block;
-}
-._banner{
-    /* border: 1px solid black; */
-      background-image: url('1.jpg') !important;
-    background-size: cover;
-    background-attachment: fixed;
-    /* filter: blur(4px); */
+} 
+._banner_img{
+/* The image used */
+background-image: url("./1.jpg") !important;
+display: block;
+/* Add the blur effect */
+/* filter: blur(8px); */
+/* -webkit-filter: blur(8px); */
 
+/* Full height */
+/* height: 100%;  */
 
-    width: 100vw;
-    /* background-image: linear-gradient(to right,  rgba(41, 41, 41, 0.644) , rgba(173, 166, 166, 0.644)); */
-    /* background-color: rgba(41, 41, 41, 0.644) !important; */
-    /* filter: blur(0.3); */
-    height: 400px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+/* Center and scale the image nicely */
+/* background-position: center;
+background-repeat: no-repeat;
+background-size: cover; */
 }
-._banner img{ 
+/* ._banner img{ 
     border: 2px solid black;
-}
-._banner_inner{
-    /* display: flex;
-    align-items: center;
-    justify-content: center; */
-    width: 70%;
-    margin: 0 auto;
-    /* border: 1px solid blasck; */
-    text-align: center;
-}
+} */
+/* ._banner_inner{
+    color: black;
+} */
 ._content{
-    filter: blur(0px) !important;
-    color: white;
+    /* filter: blur(0px) !important; */
+    color: black;
 }
 ._content h2{
    font-size: 1.5rem;
@@ -168,14 +168,18 @@ nav button{
     /* float: right; */
     color: white;
 }
+.footer_links li a{
+    text-transform: capitalize;
+}
 p.detail{
     text-align: left;
     padding-right: 10px;
 
 }
 
+
 ._modal{
-    /* display: none;    */
+    display: none;   
     position: fixed;
     height: 100%;
     width: 100%;
@@ -249,6 +253,114 @@ p.detail{
     cursor: pointer;
 
 }
+.footer_section{
+    background-color: rgb(0, 0, 0);
+}
+.section_1 ,.section_2, .section_3{
+    margin: 50px 0px;
+}
+.section_1>h3 ,.section_2>h3, .section_3>h3{
+    color: rgb(168, 167, 167);
+    text-transform: capitalize;
+    font-size: 1.8rem;
+    padding-left: 10px;
+    border-left: 3px solid rgb(168, 167, 167);
+
+}
+
+.section_1>p{
+    font-size: 1.2rem;
+    color: white;
+}
+.section_2>ul{
+    padding-left: 0px;
+    list-style: none;
+
+}
+
+.section_2>ul li a{
+    font-weight: 600px;
+    /* border: 1px solid black; */
+    color: rgb(201, 197, 197);
+    text-decoration: none;
+}
+.section_2>ul li a:hover{
+    color: rgb(119, 115, 115);
+}
+
+
+/* login */
+.login ._flex{
+    display: flex;
+    height: 100vh;
+    
+}
+.login  .section-1, .login  .section-2{
+    /* border:1px solid black; */
+    width: 50%;
+    justify-items: center;
+    align-items: center;    
+}
+.login  .section-2{
+background: linear-gradient(to right,  rgb(235, 57, 57), rgb(247, 145, 145));
+}
+.login  .section-2 .loginInner h3{
+    color: white;
+}
+.login  .section-2 .loginInner p{
+    color: white;
+    font-size: 1.3rem;
+    text-align: center;
+}
+.login  .section-2 .loginInner a{
+    color: white;
+    margin-top: 100px;
+    margin-left: 50px   ;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: 1px solid white;
+    text-decoration: none;
+    font-size: 1.3rem;
+    text-align: center;
+}
+.loginInner h3 {
+    color: 000;
+    text-transform: uppercase;
+    font-size: 3rem;
+    text-align: center;
+    /* display: flex; */
+}
+.loginInner {
+    width: 70%;
+    display: block;
+    margin: 10rem auto;
+}
+.loginInner form input[type="submit"] {
+    width: 100%;
+    font-size: 1.2rem;
+    padding: 5px 0px;
+    border: none;
+    margin-top: 10px;
+    color: white;
+    background-color: black;
+}
+.loginInner form .form-group input {
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+    background-color: rgb(245, 241, 241);
+}
+.loginInner form .form-group label {
+    font-size: 1.3rem;
+}
+.regLink{
+    margin-top: 10px;
+    font-size: 1.3rem;
+    text-align: center;
+    display: none;
+}
+.regLink p a{
+    color: white;
+}
 @keyframes modalOpen {
     from{
         opacity: 0;
@@ -261,5 +373,23 @@ p.detail{
 @media only screen and (max-width: 991px) {
     nav button{
         margin-left: 20px;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    nav button{
+        margin-left: 20px;
+    }
+    .login  .section-1{
+        width: 100%;
+        background: linear-gradient(to right,  rgb(235, 57, 57), rgb(247, 145, 145));
+        /* background-color: rgb(255, 77, 77); */
+
+    }
+    .login  .section-2{
+        display: none;
+    }
+    .regLink{
+        display: block;
     }
   }
