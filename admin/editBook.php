@@ -10,37 +10,40 @@
     $categories =  mysqli_fetch_all($result);
 
 
+    
     $book_status = false;
     $book_message = "";
-
+    
     $id = $_GET['id'];
-
-
+    
+    
     $query = "select * from books where bookId  = '{$id}'";
     $result = mysqli_query($connection,$query) or die(mysqli_error($connection));
     $editBookData = mysqli_fetch_assoc($result);
 
+    // var_dump($_FILES , $_POST);
     if(isset($_POST['update-book-form'])){
-        $book_id =$_POST['book-category'];
-        $query = "select category_name from category where category_id = {$book_id}";
-        $result = mysqli_query($connection,$query) or die("Query Failed");;
-        $data = mysqli_fetch_all($result);
-        // print_r($data[0][0]);
 
-        $book_name =$_POST['book-name'];
-        $book_author =$_POST['book-author'];
-        $book_category =$data[0][0];
-       // $book_image =$_POST['book-image'];
-        $book_file =$_POST['book-file'];
+        $category_name = "";
+        if(!empty($_POST['book-category'])){
+            $id = $_POST['book-category'] ;
+            $query = "select category_name from category where category_id  = '$id'";
+            $result = mysqli_query($connection,$query) or die(mysqli_error($connection));
+            $date = mysqli_fetch_assoc($result);
+            $category_name = $data['category_name'];
+        }
+      
+        $book_name = empty($_POST['book-name']) ? "" : $_POST['book-name'];
+        $book_author = empty($_POST['book-author']) ? "" : $_POST['book-author'] ;
+        $book_category = empty($_POST['book-author']) ? "" : $_POST['book-author'];
+        
+        $book_file =$_FILES['book-file']['size']  > 0 ? $_FILES['book-file']['name'] :  $_POST['old_file'];
+        $book_image =$_FILES['book-image']['size']  > 0 ? $_FILES['book-image']['name'] :  $_POST['old_image'];
+
         $book_description =$_POST['book-description'];
         $book_DOU = date('d-m-y');
-        // echo gettype($book_name);
-        // $query = "insert into lib-book(`bookCategory`) values(`{$book_category}`)";
-     //$query = "insert into books(bookName) values('{$book_category}')";
-        //  echo $book_DOU." ".$book_author." ".$book_name." cat=> ".$book_category." ".$book_image." ".$book_file." ".$book_description;
-
        
-        $query = "update books set bookName = '$book_name' ,bookAuthor = '$book_author' , bookCategory = '$book_category' , bookDOU = '$book_DOU',bookDescription ='$book_description',bookFile ='$book_file'  where bookId = $id"  ;
+        $query = "update books set bookName = '$book_name' ,bookAuthor = '$book_author' , bookCategory = '$book_category' , bookDOU = '$book_DOU', bookDescription ='$book_description', bookFile ='$book_file' ,bookImage ='$book_image'  where bookId = $id"  ;
         
          //$query = "Update books set(bookName = '$book_name' ,bookAuthor = '$book_author' , bookCategory = '$book_category' , bookDOU = '$book_DOU',bookDescription ='$book_description',bookFile ='$book_file') where bookId = $id";
         //  VALUES ('$book_name','$book_author','$book_category','$book_DOU','$book_description','$book_file')";
@@ -77,64 +80,99 @@
            <div class="row justify-content-center">
 
             <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-                <div class="add-book-form">
+                <div class="update-book-form">
                 <?php if($book_status)
                     echo "<div class='alert alert-success' role='alert'>"
                    .$book_message.
                   "</div>";
                 ?>
-                <form action="" method="POST" id="add-book">
+                <h3>Edit Book</h3>
+                <form enctype="multipart/form-data" method="POST" id="add-book">
                     <input type="hidden" name="book-id" id="book-id">
                     <div class="mb-3">
                         <label for="bookName" class="form-label">Book Name</label>
-                        <input type="text" value=<?php echo $editBookData['bookName']?> name="book-name" class="form-control" id="bookName" required>
+                        <input type="text" name="book-name" value="<?php echo $editBookData['bookName'] ?>" class="form-control" id="bookName" >
                         <small  class="form-text"></small>
                     </div>
 
                     <div class="mb-3">
                         <label for="bookAuthor" class="form-label">Book Author</label>
-                        <input type="text" value=<?php echo $editBookData['bookAuthor']?> name="book-author" class="form-control" id="bookAuthor" required>
+                        <input type="text" name="book-author" value="<?php echo $editBookData['bookAuthor'] ?>" class="form-control" id="bookAuthor" >
+                        <small  class="form-text"></small>
+                    </div>
+                    <div class="mb-3">
+                        <label for="book-description" class="form-label">Book Description</label>
+                        <textarea name="book-description" rows="5" class="form-control" id="book-description"  >
+                        <?php echo $editBookData['bookName'] ?>
+
+                        </textarea>
                         <small  class="form-text"></small>
                     </div>
                     <table>
-                        <tr>
+                        <tr class=" mb-3">
                     <div class="mb-3">
-                     <td><label class="book-category" class="form-label">Book Category</label></td>
-                        <td><select id="book-category" name="book-category" form="add-book">
+                     <td class="col-4 "><label class="book-category" class="form-label">Book Category</label></td>
+                        <td><select id="book-category" class="form-control"  name="book-category" form="add-book" >
                             <option value="">Select</option>
                             <?php 
                                 foreach($categories as $category){
-                                    echo "<option value='$category[0]'>$category[1]</option>";
+
+                                    $select = $category[1] == $editBookData['bookCategory'] ? 'selected' : '' ;
+                                    echo "<option value='$category[0]' ". $select ."  >$category[1]</option>";
                                 }
                             ?>
                         </select>
                         </td>
+                        
                     </div>
                     </tr>
-                    <!-- <tr>
-                    <div class="mb-3">
-                         <td><label for="book-image" class="form-label">Book Image</label></td>    
-                        <td><input type="file" class="file" name="book-image" class="form-control" id="book-image" required> </td>
+                    
+                    <!-- Book File -->
+                    <?php if(!empty($editBookData['bookFile'])) { ?>
+                        <tr class=" mt-3">
+                            <td class="col-4" ><label for="old_file" class="form-label">Old File</label></td>
+                            <td>
+                                <input type="hidden" name="old_file" value="<?php echo $editBookData['bookFile']?>" class="form-control" id="old_file" >
+                                <iframe id="iframepdf" width="500px" height="300px" src="<?php echo 'uploads/books/'.$editBookData['bookFile'] ?>"></iframe>
+                                <!-- <img src="<?php echo 'uploads/images/'.$editBookData['bookImage'] ?>" width="150px" alt=""> -->
+                            </td>
+                        </tr>
+                    <?php } ?>
+                    
+                    <tr class=" mb-3">
+                        <div class="mb-3">
+                            <td class="col-4" ><label for="book-file" class="form-label">Book File</label></td>
+                            <td>
+                                <input type="file" class="file" name="book-file" class="form-control" id="book-file" >
+                            </td>
                     </div>
-                    </tr> -->
+                    </tr>
                     
-                    
-                    <tr>
+
+                    <!-- Book Image -->
+                    <?php if(!empty($editBookData['bookImage'])) { ?>
+                        <tr class=" mt-3">
+                            <td class="col-4" ><label for="old_image" class="form-label">Old Image</label></td>
+                            <td>
+                                <input type="hidden" name="old_image" value="<?php echo $editBookData['bookImage']?>" class="form-control" id="old_image" >
+                                <img src="<?php echo 'uploads/images/'.$editBookData['bookImage'] ?>" width="150px" alt="">
+                            </td>
+                        </tr>
+                    <?php } ?>
+
+                    <tr class=" mb-3">
                     <div class="mb-3">
-                        <td><label for="book-file"  class="form-label">Book File</label></td>
-                        <td><input type="file"  value=<?php echo $editBookData['bookFile']?>  class="file" name="book-file" class="form-control" id="book-file" required></td>
+                        <td class="col-4 mb-3" ><label for="book-image" class="form-label">Book Image</label></td>
+                        <td><input type="file" class="file" name="book-image" class="form-control" id="book-image" ></td>
                         <small  class="form-text"></small>
                     </div>
                     </tr>
+
                     </table>
 
-                    <div class="mb-3">
-                        <label for="book-description" class="form-label">Book Description</label>
-                        <textarea  name="book-description" rows="5" class="form-control" id="book-description" required ><?php echo $editBookData['bookDescription']?></textarea>
-                        <small  class="form-text"></small>
-                    </div>
+                   
                 
-                <button type="submit" class="btn btn-primary" name="update-book-form">Update</button>
+                <button type="submit" class="btn btn-primary" name="update-book-form">Submit</button>
                 </form>
                 </div>
             </div>

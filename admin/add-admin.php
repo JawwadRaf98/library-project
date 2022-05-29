@@ -8,41 +8,58 @@
     $successMsg = "";
     $err= false;
     $errMsg = '';
+    $data = 0;
+    if(isset($_POST['submit']) && !empty($_POST['submit']) ){
 
-    if($_SERVER["REQUEST_METHOD"] == "POST"){
-        
-        $name = $_POST['name'];
-        $lname = $_POST['last-name'];
-        $email = $_POST['email'];
-        $pass = $_POST['password'];
-        $pass1 = $_POST['password1'];
-        $contact = $_POST['contact'];
-
-        $query = "select * from admin where adminEmail = '{$email}' LIMIT 1";
-        $result = mysqli_query($connection, $query) or die("Query failed");
-        $data = mysqli_num_rows($result);
-
-        if($data<1){
-            if($pass != $pass1){
+        if(empty($_POST['name']) || empty($_POST['email']) || empty($_POST['password']) ){
+            $err = true;
+            $errMsg = "Name, Email and Password Required!";
+        }
+        else{
+            $name =  $_POST['name'];
+            $lname = empty($_POST['last-name'])? "" : $_POST['last-name'];
+            $email =  $_POST['email'];
+            $pass =  $_POST['password'];
+            $pass1 = $_POST['password1'];
+            $contact = empty($_POST['contact']) ? "" : $_POST['contact'];
+            $status = 1;
+            if($pass == $pass1){
+            $query = "select * from admin where adminEmail = '{$email}' LIMIT 1";
+            $result = mysqli_query($connection, $query) or die("Query failed");
+            $data = mysqli_num_rows($result);
+            }
+            else{
                 $err = true;
                 $errMsg = "Password doesn't matched";
             }
-            else{
-                $query = "insert into admin (adminName, adminLastName, adminEmail, adminPassword, adminContact) values ('{$name}','{$lname}','{$email}','{$pass}','{$contact}')";
-                $result = mysqli_query($connection,$query) or die("Query failed");
-                
+
+            if($data<1){
+                if($pass != $pass1){
+                    $err = true;
+                    $errMsg = "Password doesn't match!";
+                }
+                else{
+                    $passMd5 = md5($pass);
+                    $query = "insert into admin (adminName, adminLastName, adminEmail, adminPassword, adminContact,status) values ('{$name}','{$lname}','{$email}','{$passMd5}','{$contact}' ,'{$status}')";
+                    $result = mysqli_query($connection,$query) or die("Query failed");
+                    
+                    if($result){
+                        $err = true;
+                        $errMsg = "Admin added succesfully!";
+                    }
+                    else{
+                        $err = true;
+                        $errMsg = "Admin add failed!";
+                    }
+                }
             }
-            
+            else{
+                $err = true;
+                $errMsg = "This email id already exist";
+            }
         }
-        else{
-            $err = true;
-            $errMsg = "This email id already exist";
-        }
-
-
-
-        //echo $name. ' '.$lname.' '.$email.' '.$pass.' '.$pass1.' '. $contact.' ' .$data;
     }
+
 ?>
 
  <!-- Content Wrapper -->
@@ -67,26 +84,26 @@
                     }
                 ?>
 
-               <form action = "" method="POST">
+               <form action = "" method="POST" >
                     <div class="mb-3">
                         <label for="name" class="form-label">Name</label>
                         <input type="text" name="name" class="form-control" id="name" required>
                     </div>
                     <div class="mb-3">
                         <label for="last-name" class="form-label">Last Name</label>
-                        <input type="text" name="last-name" class="form-control" id="last-name" required>
+                        <input type="text" name="last-name" class="form-control" id="last-name" >
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
-                        <input type="email" name="email" class="form-control" id="email" required>
+                        <input type="email" name="email" class="form-control" id="email"  required>
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label">Password</label>
-                        <input type="password" name="password" class="form-control" id="password">
+                        <input type="password" name="password" class="form-control" id="password"  required>
                     </div>
                     <div class="mb-3">
                         <label for="password1" class="form-label">Confirm Password</label>
-                        <input type="password" name="password1" class="form-control" id="password1">
+                        <input type="password" name="password1" class="form-control" id="password1" required>
                     </div>
                     <div class="mb-3">
                         <label for="contact" class="form-label">Contact</label>
@@ -95,7 +112,7 @@
                     </div>
                     <hr>
                     <div class="submit-btn">
-                        <button type="submit" class="btn btn-primary"  id="submit">Submit</button>
+                        <button type="submit" class="btn btn-primary" name="submit" value="submit" id="submit">Submit</button>
                     </div>
                 </form>
                </div>

@@ -146,12 +146,8 @@
                 Settings
             </a>
             <?php
-                $adminEmail = $_SESSION['adminEmail'];
-                $query = "select * from admin where adminEmail = '{$adminEmail}'";
-                $result =  mysqli_query($connection,$query) or die("query failed");
-                $data = mysqli_fetch_assoc($result);
-
-                if($data['id'] == 1  || $data['id'] == 4){
+                
+                if($_SESSION['userData']['super'] == 1){
             ?>  
                 <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="add-admin.php" >

@@ -4,14 +4,13 @@
 ?>
         <!-- Banner-->
         <section class="_banner">
-          <div class="_banner_img" ></div>
-          <!-- <div class="_banner_inner">
+          <div class="_banner_inner">
               <div class="_content">
                 <h1>E Library</h1>
                 <h2>A hub of knowledge for transformation.</h2>
                 <h3>Explore The Future of this world!</h3>
               </div>
-          </div> -->
+          </div>
         </section>
         
         <div class="container">

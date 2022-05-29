@@ -5,8 +5,6 @@
     include('includes/sidebar.php');
     include('includes/config.php');
     
-
-
     $query = "SELECT * FROM books";
     $result = mysqli_query($connection, $query) or die("Query failed");
     $books = mysqli_fetch_all($result);
@@ -32,67 +30,64 @@
                 </div>
                 <hr>
                 <div class="available-books">
-                <div class="container">
+                    <div class="container">
 
-                    <?php if($data) : ?>
-                        <div class="row">
+                    <?php if( count($books) > 0 ) : ?>
+              
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">No</th>
+                                    <th scope="col">Image</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Author</th>
+                                    <th scope="col">Description</th>
+                                    <th scope="col">Category</th>
+                                    <th scope="col">DOP</th>
+                                    <th scope="col">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
 
-                        
-                            
                             <?php 
-                            // print_r($books);
+                                $i = 1 ;
                                 foreach($books as $singleBook){
-                                    // print_r($singleBook);
 
                             ?>
-                                   <div class="col-lg-4 col-md-4 col-sm-6 sol-xs-12">
+                                <tr>
+                                <th scope="row"><?php echo $i ?></th>
+                                <td>
+                                    <div class="book_image">
+                                        <img src="<?php echo 'uploads/images/'.$singleBook[7] ?>"  />
+                                    </div>
+                                </td>
+                                <td><?php echo $singleBook[1]?></td>
+                                <td><?php echo $singleBook[2]?></td>
+                                <td><?php echo $singleBook[5]?></td>
+                                <td><?php echo $singleBook[3]?></td>
+                                <td><?php echo $singleBook[4]?></td>
+                                <td>
+                                    <a href="<?php echo 'editBook.php?id='.$singleBook[0] ?>">Edit</a>
+                                    <a href="<?php echo 'deleteBook.php?id='.$singleBook[0] ?>">Delete</a>
 
-                                   <div class="card mb-4" style="width: 18rem;">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Name: <?php echo ucfirst($singleBook['1'])?></h5>
-                                        <p class="card-text">Description: <?php echo ucfirst($singleBook['5'])?></p>
-                                    </div>
-                                    <ul class="list-group list-group-flush">
-                                        <li class="list-group-item">Authot: <?php echo ucfirst($singleBook['2'])?></li>
-                                        <li class="list-group-item">DOP: <?php echo ucfirst($singleBook['4'])?></li>
-                                        <li class="list-group-item">Category: <?php echo ucfirst($singleBook['3'])?></li>
-                                    </ul>
-                                    <div class="card-body">
-                                        <a href="editBook.php?id=<?php echo $singleBook[0]?>" type="button" class="btn btn-primary">Edit</a>
-                                        <a href="deleteBook.php?id=<?php echo $singleBook[0]?>" type="button" class="btn btn-danger">Delete</a>
-                                    </div>
-                                </div>
-                                   </div>
-                                                             
-                            <?php } ?>
+                                </td>
+
+                                </tr>
+                            <?php 
+                                $i++;
+                                } 
+                            ?>
                             
-                                <!-- <div class="card" style="width: 18rem;">
-                                    <img class="card-img-top" src=alt="Card image cap">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Name</h5>
-                                        <p class="card-text">Description:</p>
-                                    </div>
-                                    <ul class="list-group list-group-flush">
-                                        <li class="list-group-item">Authot:</li>
-                                        <li class="list-group-item">DOP:</li>
-                                        <li class="list-group-item">Category</li>
-                                    </ul>
-                                    <div class="card-body">
-                                        <button  type="button" class="btn btn-primary">Edit</button>
-                                        <button type="button" class="btn btn-danger">Delete</button>
-                                    </div>
-                                </div> -->
-
-                            </div>
-
-                            
-
-                            </div>
-                        </div>
+                            </tbody>
+                            </table>
+                                                                                    
+                        
+                     </div>
+                </div>
                     <?php else : ?>
 
                         <div class="not-found">
-                            <h1>data not found</h1>
+                            <h1>Data not found</h1>
                         </div>
                     <?php endif ?>
                 </div>

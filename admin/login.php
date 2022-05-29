@@ -1,26 +1,32 @@
 <?php
+    include 'includes/config.php';  
+
     $showAlert = false;
-// echo "jawwad";
-    if($_SERVER['REQUEST_METHOD'] == 'POST'){
-        include 'includes/config.php';
+    
+    if(isset($_POST['loginSubmit']) && !empty($_POST)){
+
+        
         $login = false;
         $showAlert = false;
         
         $email = $_POST['email'];
-        $password = $_POST['password'];
+        $password = md5($_POST['password']);
 
-        $query = "select * from admin where adminEmail = '$email' AND adminPassword = '$password'";
+        $query = "select * from admin where adminEmail = '$email' AND adminPassword = '$password' AND status = 1";
         $result = mysqli_query($connection, $query) or die("Query failed");
         $userData =  mysqli_fetch_array($result);
-        // print_r($userData['adminName']. " ". $userData['adminLastName']);
-        $num =  mysqli_num_rows($result);
 
+        $num =  mysqli_num_rows($result);
+        var_dump($userData['super']);
         if($num==1){
             $login =  true;
             session_start();
             $_SESSION['loggedIn'] = true;
             $_SESSION['adminEmail'] = $email;
             $_SESSION['userData'] = $userData;
+       
+            
+            
             header("location: index.php");
             $showAlert = false;
 
@@ -47,7 +53,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Login</title>
+    <title>Admin-Login</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -97,7 +103,7 @@
                                         </div>
                                         <hr>
                                         <div class="form-group">
-                                            <input type="Submit" value="Submit" class="btn btn-primary btn-user btn-block"
+                                            <input type="Submit" name="loginSubmit" value="Submit" class="btn btn-primary btn-user btn-block"
                                                 id="exampleInputPassword" placeholder="Password">
                                         </div>
                                        

@@ -55,6 +55,16 @@
 <!-- Divider -->
 <hr class="sidebar-divider">
 
+<?php if($_SESSION['userData']['super'] == 1) { 
+    ?>
+    <li class="nav-item">
+    <a class="nav-link" href="admin.php">
+        <i class="fas fa-fw fa-users"></i>
+        <span>Admin</span></a>
+</li>
+
+<?php } ?>
+
 
 <!-- Sidebar Toggler (Sidebar) -->
 <div class="text-center d-none d-md-inline">

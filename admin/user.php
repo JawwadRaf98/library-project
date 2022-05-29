@@ -47,11 +47,17 @@
             <?php 
                 if(mysqli_num_rows($run_query) > 0){
                     foreach($data as $row){
+
+                        $status = 1;
                         echo "<tr>";
                         echo "<td>$row[0]</td>";
                         echo "<td>$row[1]</td>";
                         echo "<td>$row[2]</td>";
                         echo "<td>$row[3]</td>";
+                        echo "<td>". $status . "</td>";
+                        echo "<td>
+                        <a href = 'deleteAdmin.php?id='$row[0]'>Edit</a>
+                        <a href = 'deleteAdmin.php?id='$row[0]'>Delete</a>";
                         echo "</tr>";
                     }
                 }

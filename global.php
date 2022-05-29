@@ -1,8 +1,10 @@
 <?php 
     include_once "function/common_funtion.php";
+    include_once "admin/class/admin.class.php";
+   
+   
+   
     $functions = new CommonFunction();
-
-    $url = $functions->getURL();
-
+    $admin = new Admin();
 
 ?>

@@ -8,6 +8,12 @@
     margin-bottom: 50px;
 
 }
+.book_image img{
+    width: 5rem;
+    padding: 0px;
+    margin: 0px;
+
+}
 .blue-divider{
     border-bottom: 2px solid rgb(149, 149, 241);
 }
@@ -138,9 +144,12 @@
     text-transform: capitalize;
     text-decoration: none;
 }
-#book-image, #book-file{
-    margin-left: 20px;
-}
+
 .add-book-form{
     margin: 50px 0px;
 }
+
+form table tr td{
+    padding: 0.5rem 0rem;
+}
+

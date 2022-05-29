@@ -19,7 +19,10 @@
 
                 <!-- top navbar -->
 
-                <?php include('includes/navbar.php') ?>
+                <?php include('includes/navbar.php') ;
+                
+    // var_dump($_SESSION);
+    ?>
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">

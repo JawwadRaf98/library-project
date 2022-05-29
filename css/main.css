@@ -3,10 +3,14 @@
     margin: 0;
     font-family: sans-serif;
 }
+section{
+    /* border: 1px solid black; */
+    padding-top: 4rem;
+}
 
 .navbar{
     width:100%;
-    background-image: linear-gradient(to left, #7952b3, #520eb9 ) ;
+    background-image: linear-gradient(to left, rgb(255, 137, 94), rgb(253, 122, 74) ) ;
     color: #fff;
     z-index: 2;
     /* height: 100px !important; */
@@ -80,37 +84,40 @@ nav button a:hover{
 .nav-item:hover .innerUl{
     display: block;
 } 
-._banner_img{
-/* The image used */
-background-image: url("./1.jpg") !important;
-display: block;
-/* Add the blur effect */
-/* filter: blur(8px); */
-/* -webkit-filter: blur(8px); */
 
-/* Full height */
-/* height: 100%;  */
+._banner {
+    background-image: url("./1.jpg");
+    filter: blur();
+    position: relative;
+    height: 25rem;
+    top: 50%;
 
-/* Center and scale the image nicely */
-/* background-position: center;
-background-repeat: no-repeat;
-background-size: cover; */
 }
-/* ._banner img{ 
-    border: 2px solid black;
-} */
-/* ._banner_inner{
-    color: black;
-} */
-._content{
+
+._banner::after {
+    content: '';
+    position: absolute;
+    /* background-color: #000000a8; */
+    inset: 0;
+}
+
+._content h1,
+._content h2,
+._content h3 {
+    color: #fff;
+    position: relative;
+    z-index: 999;
+}
+
+/* ._content{
     /* filter: blur(0px) !important; */
-    color: black;
-}
-._content h2{
+    /* color: black;
+} */
+/* ._content h2{
    font-size: 1.5rem;
    letter-spacing: 1px;
-}
-._content  h3{
+} */
+/* ._content  h3{
     font-size: 3rem;
     text-transform: uppercase;
 }
@@ -118,7 +125,7 @@ background-size: cover; */
     letter-spacing: 0.5px;
     text-transform: uppercase;
     font-size: 4rem;
-}
+} */ */
 .books{
     /* border: 1px solid; */
     margin: 50px 0px  ;
