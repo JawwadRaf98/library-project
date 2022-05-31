@@ -85,7 +85,38 @@
 .submit-btn button{
     padding: 5px 25px;
 }
-.cat-box{
+.cat-content-box {
+    border-radius: 15px;
+    padding-bottom: 10px;
+    border: 1px solid #999897;
+}
+.box_header {
+    padding: 5px;
+    text-align: center;
+    border-bottom: 1px solid #999897;
+    background-color: #e6e5e3;
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    border-radius: 15px 15px 0px 0px;
+}
+.box_body h4 {
+    padding: 0px;
+    margin: 1.3rem 0rem 0rem 0rem;
+    font-size: 3rem;
+    text-align: center;
+}
+.box_body span {
+    /* border: 1px solid; */
+    display: block;
+    letter-spacing: 2px;
+    margin-top: -12px;
+    text-align: center;
+}
+
+
+
+/* .cat-box{
     position: relative;
     width: 100%;
     margin: 5px 0px;
@@ -96,38 +127,43 @@
     background-color: #4e72dfcc;
     
 
-}
-.cat-content-box{
+} */
+/* .cat-content-box{
     margin-top: 20px;
-}
-.cat-text
+} */
+/* .cat-text
 {   
     text-transform: capitalize;
     color: rgba(0, 0, 0, 0.562);
     margin: 0;
     font-size: 24px;
     font-weight: bold;
-}
+} */
 .action{
     margin: 5px 0px;
+    display: flex;
+    justify-content: space-around;
 }
 .action button a{
-    color: white;
+    color: rgb(114, 110, 110);
     text-decoration: none;
    width: 100px;
    padding:  0px 10px;
+   font-weight: 600;
 }
+
+ 
 .edit, .delete{
     border: none;
     width: 100px;
     border-radius: 5px;
 }
 .edit,.delete{
-    background-color: rgba(190, 243, 250, 0.644);
+    background-color: rgba(221, 215, 215, 0.979);
     margin-top : 5px;
 }
 .action button:hover{
-    background-color: rgb(129, 170, 175);
+    background-color: rgba(134, 134, 134, 0.979);
 }
 .action button:hover a{
     color: black;
@@ -139,7 +175,7 @@
 }
 #cat-error{
     color: red;
-}
+} 
 .back{
     text-transform: capitalize;
     text-decoration: none;
@@ -152,4 +188,67 @@
 form table tr td{
     padding: 0.5rem 0rem;
 }
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+    margin-left: 20px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
 

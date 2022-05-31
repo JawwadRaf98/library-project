@@ -52,20 +52,21 @@
 
             <?php 
                 if( mysqli_num_rows($run_query) > 0){
+                    $i = 1;
                     foreach($data as $row){
                         $status = $row[6] == "1" ? "Active" : "Deactive";
                         $id = $row[0];
                         echo "<tr>";
-                        echo "<td>$row[0]</td>";
+                        echo "<td>$i</td>";
                         echo "<td>$row[1]</td>";
                         echo "<td>$row[2]</td>";
-                        echo "<td>$row[3]</td>";
+                        echo "<td style='text-transform: none'>$row[3]</td>";
                         echo "<td>". $status . "</td>";
                         echo "<td>
-                        <a href = 'deleteAdmin.php?id=".$row[0]."'>Edit</a>
-                        <a href = 'deleteAdmin.php?id=".$row[0]."'>Delete</a></td>";
+                        <a href = 'editAdmin.php?id=".$row[0]."'>Edit</a>
+                        <a onClick=\"javascript: return confirm('Please confirm deletion');\" href = 'deleteAdmin.php?id=".$row[0]."'>Delete</a></td>";
                        
-                       
+                       $i++;
                     }
                 }
             ?>

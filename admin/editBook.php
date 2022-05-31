@@ -24,18 +24,16 @@
     // var_dump($_FILES , $_POST);
     if(isset($_POST['update-book-form'])){
 
-        $category_name = "";
-        if(!empty($_POST['book-category'])){
-            $id = $_POST['book-category'] ;
-            $query = "select category_name from category where category_id  = '$id'";
-            $result = mysqli_query($connection,$query) or die(mysqli_error($connection));
-            $date = mysqli_fetch_assoc($result);
-            $category_name = $data['category_name'];
-        }
+        // $category_name = "";
+        // if(!empty($_POST['book-category'])){
+        
+
+        //     $category_name = $_POST['book-category'];
+        // }
       
         $book_name = empty($_POST['book-name']) ? "" : $_POST['book-name'];
         $book_author = empty($_POST['book-author']) ? "" : $_POST['book-author'] ;
-        $book_category = empty($_POST['book-author']) ? "" : $_POST['book-author'];
+        $book_category = empty($_POST['book-category']) ? "" : $_POST['book-category'];
         
         $book_file =$_FILES['book-file']['size']  > 0 ? $_FILES['book-file']['name'] :  $_POST['old_file'];
         $book_image =$_FILES['book-image']['size']  > 0 ? $_FILES['book-image']['name'] :  $_POST['old_image'];
@@ -43,11 +41,16 @@
         $book_description =$_POST['book-description'];
         $book_DOU = date('d-m-y');
        
-        $query = "update books set bookName = '$book_name' ,bookAuthor = '$book_author' , bookCategory = '$book_category' , bookDOU = '$book_DOU', bookDescription ='$book_description', bookFile ='$book_file' ,bookImage ='$book_image'  where bookId = $id"  ;
+        $query = "update books set 
+        bookName = '$book_name' ,
+        bookAuthor = '$book_author' , 
+        bookCategory = '$book_category' , 
+        bookDOU = '$book_DOU', 
+        bookDescription ='$book_description', 
+        bookFile ='$book_file' ,
+        bookImage ='$book_image'  where bookId = $id"  ;
         
-         //$query = "Update books set(bookName = '$book_name' ,bookAuthor = '$book_author' , bookCategory = '$book_category' , bookDOU = '$book_DOU',bookDescription ='$book_description',bookFile ='$book_file') where bookId = $id";
-        //  VALUES ('$book_name','$book_author','$book_category','$book_DOU','$book_description','$book_file')";
-        // echo $query;
+   
         $result = mysqli_query($connection, $query) or die(mysqli_error($connection));
         // echo $book_DOU." ".$book_author." ".$book_name." cat=> ".$book_category." ".$book_image." ".$book_file." ".$book_description;
         if($result){

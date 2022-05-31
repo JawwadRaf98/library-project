@@ -40,25 +40,32 @@
                 <th scope="col">First</th>
                 <th scope="col">Last</th>
                 <th scope="col">Email</th>
+                <th scope="col">Status</th>
+                <th scope="col">Action</th>
+
+
                 </tr>
             </thead>
             <tbody>
 
             <?php 
                 if(mysqli_num_rows($run_query) > 0){
+                    $i = 1;
                     foreach($data as $row){
-
-                        $status = 1;
+                        // var_dump($row);
+                        $status = $row[5] == "1" ? "Active" : "Deactive";
                         echo "<tr>";
-                        echo "<td>$row[0]</td>";
+                        echo "<td>$i</td>";
                         echo "<td>$row[1]</td>";
                         echo "<td>$row[2]</td>";
-                        echo "<td>$row[3]</td>";
+                        echo "<td style='text-transform: none'>$row[3]</td>";
                         echo "<td>". $status . "</td>";
                         echo "<td>
-                        <a href = 'deleteAdmin.php?id='$row[0]'>Edit</a>
-                        <a href = 'deleteAdmin.php?id='$row[0]'>Delete</a>";
+                        <a href = 'editUser.php?id=".$row[0]."'>Edit</a>
+                        <a onClick=\"javascript: return confirm('Please confirm deletion');\" href = 'deleteUser.php?id=".$row[0]."'>Delete</a></td>";
                         echo "</tr>";
+
+                        $i++;
                     }
                 }
             ?>

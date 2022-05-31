@@ -76,6 +76,7 @@
        <div class="container add-admin">
            <div class="row">
                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 add-admin-col">
+               <h3>Admin Information </h3>
                 <?php
                     if($err){
                         echo '<div class="alert alert-primary" role="alert">';

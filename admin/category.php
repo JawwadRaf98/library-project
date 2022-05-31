@@ -37,15 +37,24 @@
             <?php
                 if(count($category) > 0){
                     foreach($category as $value){
+                        $id = $value['0'];
+                        $query = "SELECT * FROM books WHERE bookCategory = '{$id}'";
+                        $result = mysqli_query($connection,$query) or die("Query failed");
+                        $no_of_rows = mysqli_num_rows($result);
+
             ?>
                     <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 ">
                         <div class="cat-box">
                             <div class="cat-content-box">
-                                <p class="cat-text">
-                                <?php echo $value[1] ?>    
-                                </p>
+                                <div class="box_header">
+                                    <?php echo $value[1] ?>    
+                                </div>
+                                <div class="box_body">
+                                    <h4><?php echo $no_of_rows ?></h4>
+                                    <span>Books</span>
+                                </div>
                                 <div class="action">
-                                    <button class="delete" ><a  href="delete.php?del-id=<?php echo $value[0] ?>">Delete</a> </button> 
+                                    <button class="delete" ><a onClick="javascript: return confirm('Please confirm deletion');"  href="deleteCategory.php?del-id=<?php echo $value[0] ?>">Delete</a> </button> 
                                     <button class="edit"><a href="edit.php?id=<?php echo $value[0] ?>">Edit</a></button>
                                 </div>
                             </div>

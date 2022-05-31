@@ -18,7 +18,7 @@
         rel="stylesheet">
 
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-    
+    <script src="https://kit.fontawesome.com/a16440b640.js" crossorigin="anonymous"></script>
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
 </head>

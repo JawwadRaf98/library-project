@@ -17,17 +17,12 @@
         // var_dump($_POST, $_FILES);
 
         $book_id =$_POST['book-category'];
-        $query = "select category_name from category where category_id = {$book_id}";
-        $result = mysqli_query($connection,$query) or die("Query Failed");;
-        $data = mysqli_fetch_all($result);
-
-
+        
         $book_name =$_POST['book-name'];
         $book_author =$_POST['book-author'];
         $book_file = $_FILES['book-file']['name'];
         $bookImage = $_FILES['book-image']['name'];
-        // var_dump($book_file);
-        $book_category =$data[0][0];
+
         $book_description =$_POST['book-description'];
         $book_DOU = date('d-m-y');
 
@@ -72,7 +67,7 @@
 
         if(count($errors) == 0){
             $query = "INSERT INTO books(bookName,bookAuthor, bookCategory, bookDOU,bookDescription,bookFile, bookImage)
-            VALUES ('$book_name','$book_author','$book_category','$book_DOU','$book_description','$book_file', '$bookImage')";
+            VALUES ('$book_name','$book_author','$book_id','$book_DOU','$book_description','$book_file', '$bookImage')";
         // echo $query;
             $result = mysqli_query($connection, $query) or die(mysqli_error($connection));
         // echo $book_DOU." ".$book_author." ".$book_name." cat=> ".$book_category." ".$book_image." ".$book_file." ".$book_description;

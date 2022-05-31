@@ -17,8 +17,8 @@
         $userData =  mysqli_fetch_array($result);
 
         $num =  mysqli_num_rows($result);
-        var_dump($userData['super']);
-        if($num==1){
+        // var_dump($userData['super']);
+        if($num != NULL){
             $login =  true;
             session_start();
             $_SESSION['loggedIn'] = true;

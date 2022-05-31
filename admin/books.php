@@ -9,6 +9,7 @@
     $result = mysqli_query($connection, $query) or die("Query failed");
     $books = mysqli_fetch_all($result);
     
+    // var_dump($books);
 ?>
 
  <!-- Content Wrapper -->
@@ -52,8 +53,12 @@
                             <?php 
                                 $i = 1 ;
                                 foreach($books as $singleBook){
-
-                            ?>
+                                    // var_dump("single book --->" .$singleBook);
+                                    
+                                    $query = "SELECT category_name FROM category WHERE category_id = '" .$singleBook[3]."' ";
+                                    $result = mysqli_query($connection, $query) or die("Query failed");
+                                    $category = mysqli_fetch_assoc($result);
+                                ?>
                                 <tr>
                                 <th scope="row"><?php echo $i ?></th>
                                 <td>
@@ -64,11 +69,11 @@
                                 <td><?php echo $singleBook[1]?></td>
                                 <td><?php echo $singleBook[2]?></td>
                                 <td><?php echo $singleBook[5]?></td>
-                                <td><?php echo $singleBook[3]?></td>
+                                <td><?php echo $category['category_name']?></td>
                                 <td><?php echo $singleBook[4]?></td>
                                 <td>
                                     <a href="<?php echo 'editBook.php?id='.$singleBook[0] ?>">Edit</a>
-                                    <a href="<?php echo 'deleteBook.php?id='.$singleBook[0] ?>">Delete</a>
+                                    <a onClick="javascript: return confirm('Please confirm deletion');" href="<?php echo 'deleteBook.php?id='.$singleBook[0] ?>">Delete</a>
 
                                 </td>
 
