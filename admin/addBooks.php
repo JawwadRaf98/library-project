@@ -41,7 +41,9 @@
              }
             
              if(empty($errors)==true){
-                move_uploaded_file($file_tmp,"uploads/books/".$file_name);
+                $book = time(). "_".  rand(100, 999999) . '.' . end(explode(".",$_FILES["book-file"]["name"]));
+                $book_file  = $book ;
+                move_uploaded_file($file_tmp,"uploads/books/".$book);
              }
         }
 
@@ -61,7 +63,9 @@
              }
             
              if(empty($errors)==true){
-                move_uploaded_file($file_tmp,"uploads/images/".$file_name);
+                $image = time(). "_". rand(100, 999999) . '.' . end(explode(".",$_FILES["book-image"]["name"]));
+                $bookImage = $image;
+                move_uploaded_file($file_tmp,"uploads/images/".$image);
              }
         }
 

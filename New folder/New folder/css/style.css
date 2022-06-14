@@ -1,0 +1,78 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif    ;
+
+}
+.header .top_header {
+    display: flex;
+    justify-content: end;
+    background: rgba(38, 230, 20, 0.935);
+    min-width: 350px;
+    padding-left: 4rem;
+
+}
+.header .top_header span{
+    font-size: 1.5rem;
+    /* border: 1px solid black; */
+    padding: 0rem 0.5rem ;
+}
+span i{
+    font-size: 1rem;
+}
+.fa-phone{
+    color: blue;
+    
+}
+a.navbar-brand.logo {
+    margin: 0px 5rem;
+}
+input.form-control.mr-sm-2.search_box {
+    width: 20rem;
+}
+
+.logo img {
+    width: 20rem;
+}
+
+/* banner */
+.banner{
+    background-image: url('../images/banner.jpg');
+    background-repeat: no-repeat;   
+    background-attachment: fixed;
+    background-size: cover;
+    /* border: 1px solid; */
+    min-width: 350px;
+    max-width: 100%;
+    height:25rem;
+    /* display: inherit; */
+    position: relative;
+}
+._banner::after{
+    filter: blur(5px);
+    content: '';
+    position: absolute;
+
+}
+.banner::before {
+    content: "";
+    position: absolute;
+    width : 100%;
+    height: 100%;
+    /* background: inherit; */
+    z-index: -1;
+
+    filter        : blur(10px);
+}
+.text{    /* border: 1px solid; */
+    position: absolute;
+    filter: blur(0px);
+    top: 50%;
+    left: 5rem;
+    width: 50%;
+    color: white;
+    transform: translateY(-50%);
+}
+.text h3{
+    font-size: 2.5rem;
+}
