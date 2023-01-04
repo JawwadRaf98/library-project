@@ -1,6 +1,5 @@
 <?php 
   include_once "header.php";
-
 ?>
         <!-- Banner-->
         <section class="_banner">

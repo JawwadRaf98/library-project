@@ -10,14 +10,17 @@
         $showAlert = false;
         
         $email = $_POST['email'];
-        $password = md5($_POST['password']);
+        echo $password = md5($_POST['password']);
 
-        $query = "select * from admin where adminEmail = '$email' AND adminPassword = '$password' AND status = 1";
+        $query = "SELECT * from admin WHERE adminEmail = '$email' AND adminPassword = '$password' AND status = 1";
+        // $query = "select * from admin ";
+
         $result = mysqli_query($connection, $query) or die("Query failed");
         $userData =  mysqli_fetch_array($result);
 
         $num =  mysqli_num_rows($result);
-        // var_dump($userData['super']);
+        // var_dump($userData);
+        // exit();
         if($num != NULL){
             $login =  true;
             session_start();

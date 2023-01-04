@@ -12,7 +12,7 @@
                 <h3>Useful Link</h3>
                 <ul class="footer_links">
                     <li><a href="">Home</a></li>
-                    <li><a href="about.php">About</a></li>
+                    <li><a href="about-us.php">About</a></li>
                     <li><a href="contact.php">Contact</a></li>
                     <li><a href="login.php">login</a></li>
                     <li><a href="registration.php">Registration</a></li>
